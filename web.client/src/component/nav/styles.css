@@ -1,0 +1,32 @@
+#content{
+    background-color: #fafafa;
+    width: 90%;
+    margin: 0 auto;
+    min-width: 1030px;
+    max-width: 1430px;
+    z-index: 5;
+    padding: 0 ;
+}
+.headerContainer{
+    padding:20px 0px;
+    display: flex;
+}
+
+.headerContainer .header-part{
+    height: 65px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px 0 rgba(33, 33, 33, 0.5);
+}
+.headerContainer .main-grid{
+    padding:0px;
+}
+.headerContainer .menu-part{
+    box-shadow: 0 1px 3px 0 rgba(33, 33, 33, 0.5);
+    padding:0px;
+    min-height: 650px;
+    background-color: #28273c;
+}
+.headerContainer .LeftMenu{
+    height: 65px;
+    background-color: #9f9bde;
+}
