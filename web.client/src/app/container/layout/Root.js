@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Header from "../Header";
+import Header from "../Header/index";
 import Home from '../pages/Home'
 import About from '../pages/About'
 import ContactUs from "../pages/ContactUs";
