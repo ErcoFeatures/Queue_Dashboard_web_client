@@ -2,28 +2,20 @@
 // React imports
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {IntlProvider} from 'react-intl';
-import {connect, Provider} from 'react-redux';
-import configureStore from './app/store/configureStore';
 import './index.css';
 
-// module imports
-// import '../node_modules/bootstrap-css-only/css/bootstrap.min.css';
-// import './css/style.css';
-// import "../node_modules/font-awesome/css/font-awesome.min.css";
-import Root from './app/container/layout/Root';
-import Loader from './app/container/loader';
+import { addLocaleData } from 'react-intl';
+import en from 'react-intl/locale-data/en';
+import fr from 'react-intl/locale-data/fr';
 
+// Workers
+import {register} from './serviceWorker';
 
-const appLoader = ReactDOM.render(<Loader/>, document.getElementById('apploader'));
-appLoader.show();
-const store = configureStore();
+// App imports
+import App from './app/App';
+import './index.css';
 
-ReactDOM.render(
-    <Provider store={store}>
-        <Root/>
-    </Provider>, document.getElementById('root')
-);
+addLocaleData([...en, ...fr]);
+register();
 
-
-appLoader.hide();
+ReactDOM.render(<App />, document.getElementById('root'));

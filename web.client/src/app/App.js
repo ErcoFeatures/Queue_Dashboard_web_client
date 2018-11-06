@@ -1,28 +1,46 @@
-import React, { Component } from 'react';
-import logo from '../logo.svg';
+import React, {Component} from 'react';
+import Root from './container/layout/Root'
 import './App.css';
+import {connect, Provider} from 'react-redux'
+import {IntlProvider} from 'react-intl';
+import ReactDOM from "react-dom";
+import Loader from "./container/loader";
+import PropTypes from 'prop-types';
+import configureStore from "./store/configureStore";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
-}
+const AppBody = ({selectedLanguage, selectedTranslations, classes}) => (
+    <IntlProvider
+        key={selectedLanguage}
+        locale={selectedLanguage}
+        messages={selectedTranslations}
+    >
+        <Root/>
+    </IntlProvider>
+);
+
+AppBody.propTypes = {
+    classes: PropTypes.object.isRequired
+};
+
+const mapStateToProps = ({
+                             translation: {selectedLanguage, selectedTranslations}
+                         }) => ({
+    selectedLanguage,
+    selectedTranslations
+});
+
+const AppBodyWithState = connect(mapStateToProps)(AppBody);
+const appLoader = ReactDOM.render(<Loader/>, document.getElementById('apploader'));
+appLoader.show();
+const store = configureStore();
+
+
+const App = () => (
+    <Provider store={store}>
+        <AppBodyWithState/>
+    </Provider>
+);
+appLoader.hide();
+
 
 export default App;
