@@ -1,5 +1,10 @@
+.stickyHeader{
+    width: 100%;
+    height: 150px;
+    background-color: #E1E9EC;
+    position: absolute;
+}
 #content{
-    background-color: #fafafa;
     width: 90%;
     margin: 0 auto;
     min-width: 1030px;
@@ -7,26 +12,57 @@
     z-index: 5;
     padding: 0 ;
 }
-.headerContainer{
-    padding:20px 0px;
+.main-container{
+    padding-top:20px;
     display: flex;
+    box-shadow: 0 1px 3px 0 rgba(33, 33, 33, 0.5);
+    border-radius:10px;
 }
 
-.headerContainer .header-part{
-    height: 65px;
-    background-color: #ffffff;
-    box-shadow: 0 1px 3px 0 rgba(33, 33, 33, 0.5);
+.main-container .header-part{
+    height: 49px;
+    background-color: #1789CF;
+    padding: 15px;
+    /*box-shadow: 0px 4px 6px -2px rgba(0,0,0,0.75);*/
+    border-top-right-radius: 10px;
 }
-.headerContainer .main-grid{
+.no-padding {
     padding:0px;
 }
-.headerContainer .menu-part{
-    box-shadow: 0 1px 3px 0 rgba(33, 33, 33, 0.5);
+.main-container .header-part .addClientButton, .main-container .header-part .topHearContent{
+    color :#CAE3EB;
+}
+
+.main-container .main-grid{
+    background-color: #FAFAFA;
+    border-radius: 10px;
+}
+.main-container .menu-part{
     padding:0px;
     min-height: 650px;
-    background-color: #28273c;
+    background-color: #1FAAF3;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
 }
-.headerContainer .LeftMenu{
+.main-container .LeftMenu{
+ color: rgb(121, 116, 105)
+}
+
+.main-container .main-content{
+    padding:20px;
+}
+.main-container .user-profile-container{
+    padding:15px;
+    background-color: #1FAAF3;
     height: 65px;
-    background-color: #9f9bde;
+    /*box-shadow: 0px 4px 6px -2px rgba(0,0,0,0.75);*/
+    border-top-left-radius: 10px;
+}
+
+.main-container .sub-menu-part{
+    padding:20px 0px;
+}
+.main-container .sub-menu-part ul{
+    padding:0;
+    list-style-type: none;
 }

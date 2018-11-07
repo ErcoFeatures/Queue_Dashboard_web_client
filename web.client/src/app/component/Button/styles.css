@@ -1,0 +1,18 @@
+.textButtonWithIcon{
+    font-size: 14px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.55;
+    letter-spacing: normal;
+    color: #616161;
+}
+.textButtonWithIcon .fa{
+    margin-right: 4px;
+}
+.textButtonWithIcon:hover{
+    cursor: pointer;
+}
+.active{
+    color: rgb(244, 92, 40);
+}

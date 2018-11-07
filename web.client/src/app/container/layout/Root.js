@@ -3,7 +3,7 @@ import Header from "../Header/index";
 import Home from '../pages/Home'
 import About from '../pages/About'
 import ContactUs from "../pages/ContactUs";
-import { Route, Router, Switch, BrowserRouter, HashRouter,Redirect } from "react-router-dom";
+import { Route, Router, Switch, HashRouter,Redirect } from "react-router-dom";
 import createHistory from "history/createBrowserHistory";
 import PropTypes from "prop-types";
 import LoginRedirect from "../pages/Login";
@@ -33,7 +33,7 @@ const checkPagePermission = () => {
 
 class Root extends Component {
     render() {
-        let state = this.context.store.getState();
+        // let state = this.context.store.getState();
 
         if (checkPagePermission()) {
             return (

@@ -1,14 +1,23 @@
-import React, {Component} from 'react';
+import React from 'react';
 import Root from './container/layout/Root'
 import './App.css';
 import {connect, Provider} from 'react-redux'
 import {IntlProvider} from 'react-intl';
 import ReactDOM from "react-dom";
 import Loader from "./container/loader";
-import PropTypes from 'prop-types';
-import configureStore from "./store/configureStore";
+import { selectLanguage } from './actions/translation';
+import configureStore from './store/configureStore';
+import { initializeFacebookSDK } from './actions/auth';
+import {FB_APP_ID} from '../config/environment'
 
-const AppBody = ({selectedLanguage, selectedTranslations, classes}) => (
+
+const store = configureStore();
+
+store.dispatch(selectLanguage());
+store.dispatch(initializeFacebookSDK());
+
+
+const AppBody = ({selectedLanguage, selectedTranslations}) => (
     <IntlProvider
         key={selectedLanguage}
         locale={selectedLanguage}
@@ -18,9 +27,6 @@ const AppBody = ({selectedLanguage, selectedTranslations, classes}) => (
     </IntlProvider>
 );
 
-AppBody.propTypes = {
-    classes: PropTypes.object.isRequired
-};
 
 const mapStateToProps = ({
                              translation: {selectedLanguage, selectedTranslations}
@@ -29,11 +35,13 @@ const mapStateToProps = ({
     selectedTranslations
 });
 
+
+console.log( "FB=>", FB_APP_ID);
+
 const AppBodyWithState = connect(mapStateToProps)(AppBody);
 const appLoader = ReactDOM.render(<Loader/>, document.getElementById('apploader'));
-appLoader.show();
-const store = configureStore();
 
+appLoader.show();
 
 const App = () => (
     <Provider store={store}>
