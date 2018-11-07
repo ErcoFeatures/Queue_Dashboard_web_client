@@ -1,5 +1,5 @@
-import React , {Component} from 'react'
-import QDNav from '../../component/nav/index'
+import React from 'react'
+import QDNav from '../../component/nav'
 
  const Header = (props) => {
     return (

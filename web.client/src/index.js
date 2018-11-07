@@ -3,11 +3,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-
+import "../node_modules/font-awesome/css/font-awesome.min.css";
 import { addLocaleData } from 'react-intl';
 import en from 'react-intl/locale-data/en';
 import fr from 'react-intl/locale-data/fr';
-
 // Workers
 import {register} from './serviceWorker';
 

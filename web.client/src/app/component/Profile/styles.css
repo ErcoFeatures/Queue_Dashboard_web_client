@@ -1,0 +1,19 @@
+@include media-breakpoint-up(sm) {
+    .toolbarButtonWithText {
+        display: block;
+    }
+    .toolbarButtonWithoutText{
+        display: inline-flex;
+    }
+    .nameLabelSmallScreen {
+        display: block;
+        textAlign: center
+    }
+    .nameLabelBigScreen{
+        display: none;
+    }
+}
+
+
+
+

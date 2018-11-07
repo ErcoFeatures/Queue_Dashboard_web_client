@@ -1,10 +1,9 @@
-import React , {Component} from 'react'
-
+import React from 'react'
 const MainContainer = (props) => {
 
     return (
         <div className="main-content">
-            {"content"}
+            {"main content"}
         </div>
     )
 }

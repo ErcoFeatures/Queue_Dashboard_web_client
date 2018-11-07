@@ -1,0 +1,21 @@
+.leftMenuItem{
+    padding-top:15px;
+    padding-bottom:15px;
+    padding-left:15px;
+    padding-right:0px;
+    display: table;
+    width: 100%;
+}
+.leftMenuItem .textButtonWithIcon{
+    float: left;
+}
+.leftMenuItem .clientItemArrow{
+    float: right;
+    font-size: 20px;
+    color:rgb(241,235,223)
+}
+.leftMenuItem:hover{
+    background-color: rgba(0,97,188,.05);
+    cursor: pointer;
+}
+
