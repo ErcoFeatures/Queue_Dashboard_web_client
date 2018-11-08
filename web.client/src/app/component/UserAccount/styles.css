@@ -1,15 +1,7 @@
-.UserAccount{
-    float: left;
-    display:inline-flex;
-}
-
 .UserAccount .user-infos{
     float: right;
     display:inline-flex;
 }
-.UserAccount .user-avatar{
-    float: left;
-    width: 20px;
-    height: 25px;
-    font-size: 18px;
+.UserAccount .user-avatar img{
+    border-radius: 45px;
 }
