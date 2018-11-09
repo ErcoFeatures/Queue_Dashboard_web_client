@@ -7,12 +7,11 @@ import { Route, Router, Switch, HashRouter,Redirect } from "react-router-dom";
 import createHistory from "history/createBrowserHistory";
 import PropTypes from "prop-types";
 import LoginRedirect from "../pages/Login";
-import UnAuth from "../pages/Unauthorizedaccess";
 import connect from "react-redux/es/connect/connect";
-import User from "../../component/Profile/User";
 import Login from "../../component/Profile/Login";
 import {login, logout} from "../../actions/auth";
 import StartPage from "./Start";
+import LoginLoader from "../../component/LogginLoader";
 
 const history = createHistory();
 
@@ -20,9 +19,10 @@ const AuthRoute = ({ component: Component, state, onLogin, ...rest }) => {
 
     if (rest.isConnecting) {
         return (
-            <StartPage>
-                <p>loading ....</p>
-            </StartPage>
+            <Route {...rest} render={props => <StartPage>
+                <LoginLoader {...props}/>
+            </StartPage>} />
+
         )
     } else if (rest.isConnected) {
         return (
@@ -32,18 +32,8 @@ const AuthRoute = ({ component: Component, state, onLogin, ...rest }) => {
             </div>
         );
     } else {
-        return  <Route {...rest} render={props =><StartPage> <Login onLogin={onLogin} {...props} /></StartPage>} />;;
+        return  <Route {...rest} render={props =><StartPage> <Login onLogin={onLogin} {...props} /></StartPage>} />;
     }
-    // if (rest.isConnected) {
-    //     return (
-    //         <div>
-    //             <Header />
-    //             <Route {...rest} render={props => <Component {...props} reportType={rest.reportType}/>} />
-    //         </div>
-    //     );
-    // } else {
-    //     return <Route {...rest} render={props => <UnAuth {...props} />} />;
-    // }
 
 };
 

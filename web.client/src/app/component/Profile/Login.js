@@ -9,7 +9,8 @@ const Login = function({ intl: { formatMessage }, ...props }) {
     });
 
     return (
-        <div>
+        <div className="loginContainer text-center">
+
             <div className="logoContainer">
                 <i className="fa fa-dashcube fa-rotate-90"> </i>{"UEUE_DASHBOARD"}
             </div>

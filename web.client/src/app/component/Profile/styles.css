@@ -18,7 +18,7 @@
     padding:15px
 }
 
-.loginPage .LoginButton{
+.loginPage .LoginButton  {
     position: absolute;
     /* float: inherit; */
     vertical-align: bottom;
