@@ -1,0 +1,11 @@
+
+.loginContainer .loadingText{
+    position: absolute;
+    vertical-align: bottom;
+    width: 122px;
+    height: 25px;
+    border-radius: 15px;
+    color: #CAE3EB;
+    bottom: 15px;
+    left: 61px;
+}

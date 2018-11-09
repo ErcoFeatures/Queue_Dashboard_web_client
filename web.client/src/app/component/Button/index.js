@@ -4,7 +4,7 @@ import './styles.css'
 
 export const TextButtonWithIcon = (props) => {
 
-    let activeState = props.activeClientID === props.id?"active":""
+    let activeState = props.activeClientID && props.activeClientID === props.id?"active":""
     return (
         <div onClick={props.onclick} className={"textButtonWithIcon "+props.className+ " "+activeState }>
             <span>

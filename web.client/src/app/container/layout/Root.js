@@ -7,13 +7,24 @@ import { Route, Router, Switch, HashRouter,Redirect } from "react-router-dom";
 import createHistory from "history/createBrowserHistory";
 import PropTypes from "prop-types";
 import LoginRedirect from "../pages/Login";
-import UnAuth from "../pages/Unauthorizedaccess";
+import connect from "react-redux/es/connect/connect";
+import Login from "../../component/Profile/Login";
+import {login, logout} from "../../actions/auth";
+import StartPage from "./Start";
+import LoginLoader from "../../component/LogginLoader";
 
 const history = createHistory();
 
-const AuthRoute = ({ component: Component, state, ...rest }) => {
+const AuthRoute = ({ component: Component, state, onLogin, ...rest }) => {
 
-    if (rest.maintenance || checkPagePermission()) {
+    if (rest.isConnecting) {
+        return (
+            <Route {...rest} render={props => <StartPage>
+                <LoginLoader {...props}/>
+            </StartPage>} />
+
+        )
+    } else if (rest.isConnected) {
         return (
             <div>
                 <Header />
@@ -21,7 +32,7 @@ const AuthRoute = ({ component: Component, state, ...rest }) => {
             </div>
         );
     } else {
-        return <Route {...rest} render={props => <UnAuth {...props} />} />;
+        return  <Route {...rest} render={props =><StartPage> <Login onLogin={onLogin} {...props} /></StartPage>} />;
     }
 
 };
@@ -33,7 +44,7 @@ const checkPagePermission = () => {
 
 class Root extends Component {
     render() {
-        // let state = this.context.store.getState();
+
 
         if (checkPagePermission()) {
             return (
@@ -45,16 +56,19 @@ class Root extends Component {
                             exact
                             path="/QueueDashboard"
                             component={Home}
+                            {...this.props}
                         />
                         <AuthRoute
                             pageName="About"
                             path="/apropos*"
                             component={About}
+                            {...this.props}
                         />
                         <AuthRoute
                             pageName="contact"
                             path="/contact*"
                             component={ContactUs}
+                            {...this.props}
                         />
 
                     </Switch>
@@ -76,4 +90,22 @@ Root.contextTypes = {
     store: PropTypes.object
 };
 
-export default Root;
+
+Root.propTypes = {
+    isConnected: PropTypes.bool.isRequired,
+    isConnecting: PropTypes.bool.isRequired,
+};
+
+const mapStateToProps = ({ auth: { isConnecting, user } }) => ({
+    isConnecting,
+    isConnected: user.id !== null,
+    user
+});
+
+const mapDispatchToProps = dispatch => {
+    return {
+        onLogin: () => dispatch(login()),
+        onLogout: () => dispatch(logout())
+    };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Root);
