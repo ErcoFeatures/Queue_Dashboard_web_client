@@ -18,7 +18,7 @@ const QDNav = (props) => {
                 </div>
                 <div className="col-xs-10 no-padding">
                     <div className="header-part">
-                        <TopHeader/>
+                        <TopHeader {...props}/>
                     </div>
                     <MainContainer/>
                 </div>

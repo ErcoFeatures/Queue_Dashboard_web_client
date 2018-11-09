@@ -1,10 +1,7 @@
 //React
 import React from 'react';
-import {FormattedMessage} from 'react-intl';
 import {intlShape} from 'react-intl';
 
-import {Popover, Button} from "react-bootstrap";
-import {TextButtonWithIcon} from "../Button";
 
 
 class MenuProfile extends React.Component {
@@ -27,11 +24,9 @@ class MenuProfile extends React.Component {
                 <div className={"nameLabelBigScreen text-center pagination-centered"}>
                         {this.props.name}
                 </div>
-
-                <TextButtonWithIcon iconClass="fa fa-sign-out"
-                                    onClick={this.props.onLogout}
-                                    label={<FormattedMessage id="components.header.buttons.logout"/>}
-                                    className="loggingOut text-center pagination-centered"/>
+                <div className={"text-center pagination-centered"}>
+                        {""}
+                </div>
 
             </div>
         );
