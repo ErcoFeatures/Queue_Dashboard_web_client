@@ -10,6 +10,7 @@
     "react": "^16.5.2",
     "react-bootstrap": "^0.32.4",
     "react-dom": "^16.5.2",
+    "react-helmet": "^5.2.0",
     "react-intl": "^2.7.1",
     "react-loading-bar": "^0.0.7",
     "react-redux": "^5.0.7",

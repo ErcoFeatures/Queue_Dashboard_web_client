@@ -9,6 +9,7 @@ import { selectLanguage } from './actions/translation';
 import configureStore from './store/configureStore';
 import { initializeFacebookSDK } from './actions/auth';
 import {FB_APP_ID} from '../config/environment'
+import HelmetIntl from './component/helmetIntl/';
 
 
 const store = configureStore();
@@ -23,7 +24,10 @@ const AppBody = ({selectedLanguage, selectedTranslations}) => (
         locale={selectedLanguage}
         messages={selectedTranslations}
     >
+        <div>
+        <HelmetIntl messageId='app.name'/>
         <Root/>
+        </div>
     </IntlProvider>
 );
 
