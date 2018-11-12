@@ -12,24 +12,28 @@ import {FB_APP_ID} from '../config/environment'
 import HelmetIntl from './component/helmetIntl/';
 
 
-const store = configureStore();
-
-store.dispatch(selectLanguage());
-store.dispatch(initializeFacebookSDK());
 
 
-const AppBody = ({selectedLanguage, selectedTranslations}) => (
-    <IntlProvider
-        key={selectedLanguage}
-        locale={selectedLanguage}
-        messages={selectedTranslations}
-    >
-        <div>
-        <HelmetIntl messageId='app.name'/>
-        <Root/>
-        </div>
-    </IntlProvider>
-);
+
+
+const AppBody = ({selectedLanguage, selectedTranslations}, props) => {
+
+    props.store.dispatch(selectLanguage());
+    props.store.dispatch(initializeFacebookSDK());
+
+    return (
+        <IntlProvider
+            key={selectedLanguage}
+            locale={selectedLanguage}
+            messages={selectedTranslations}
+        >
+            <div>
+                <HelmetIntl messageId='app.name'/>
+                <Root/>
+            </div>
+        </IntlProvider>
+    );
+}
 
 
 const mapStateToProps = ({
@@ -47,8 +51,8 @@ const appLoader = ReactDOM.render(<Loader/>, document.getElementById('apploader'
 
 appLoader.show();
 
-const App = () => (
-    <Provider store={store}>
+const App = (props) => (
+    <Provider store={props.store}>
         <AppBodyWithState/>
     </Provider>
 );

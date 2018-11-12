@@ -13,12 +13,12 @@ class Config {
     static get adminServiceURL() {
         return window.Gemini.Config.adminServiceURL
             ? window.Gemini.Config.adminServiceURL
-            : "https://localhost:8080/adminservices/";
+            : "http://localhost:8080/adminservices/";
     }
     static get queueDashboardUrl() {
-        return window.Gemini.Config.legacyRecurit
-            ? window.Gemini.Config.legacyRecuritUrl
-            : window.Gemini.Config.legacyRecuritUrl;
+        return window.Gemini.Config.queueDashboardUrl
+            ? window.Gemini.Config.queueDashboardUrl
+            : "http://localhost:8080";
     }
     
     static get loginURL() {

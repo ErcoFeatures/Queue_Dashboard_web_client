@@ -1,6 +1,8 @@
 import { createAction } from 'redux-actions';
 import { FB_APP_ID } from '../../config/environment';
 
+export const setAuth = createAction('SET_AUTH');
+
 export const resetUser = createAction('LOGOUT_USER');
 export const isUserConnected = createAction('IS_USER_CONNECTED');
 export const userIsConnecting = createAction('USER_IS_CONNECTING');

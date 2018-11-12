@@ -5,7 +5,8 @@ import {
     resetUser,
     isUserConnected,
     userIsConnecting,
-    setUser
+    setUser,
+    setAuth
 } from '../actions/auth';
 
 export const INITIAL_STATE = {
@@ -22,6 +23,12 @@ export const INITIAL_STATE = {
 
 export default handleActions(
     {
+        [setAuth]: (state, {payload}) => {
+            return{
+                ...state,
+                userObject:payload
+            }
+        },
         [isUserConnected]: (state, { payload }) => {
             return {
                 ...state,

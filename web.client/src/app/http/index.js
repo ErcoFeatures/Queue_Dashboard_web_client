@@ -1,5 +1,5 @@
 import axios from "axios";
-import cookie from "react-cookie";
+// import cookie from "react-cookie";
 import Config from "../profiles";
 
 const http = axios.create({
@@ -19,8 +19,8 @@ const http = axios.create({
 
 http.interceptors.request.use(function (config) {
     if(config.url.indexOf(Config.adminServiceURL) >= 0){
-        let prefix = (config.url.indexOf('?') >= 0) ? '&' : '?';
-        config.url += `${prefix}token=${cookie.load('S3Token')}`;
+        // let prefix = (config.url.indexOf('?') >= 0) ? '&' : '?';
+        // config.url += `${prefix}token=${cookie.load('S3Token')}`;
     }
 
     return config;
