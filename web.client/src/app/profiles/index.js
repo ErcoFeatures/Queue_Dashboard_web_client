@@ -24,7 +24,7 @@ class Config {
     static get loginURL() {
         return window.Gemini.Config.loginURL
             ? window.Gemini.Config.loginURL
-            : "http://localhost:8080/memberweb";
+            : "http://localhost:8080/";
     }
     static get changePasswordURL() {
         return window.Gemini.Config.s3ChangePasswordUrl
