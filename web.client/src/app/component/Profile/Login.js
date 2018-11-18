@@ -23,7 +23,6 @@ const Login = function({ intl: { formatMessage }, ...props }) {
 };
 
 Login.propTypes = {
-    onLogin: PropTypes.func.isRequired,
     intl: intlShape.isRequired
 };
 

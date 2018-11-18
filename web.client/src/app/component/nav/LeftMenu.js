@@ -7,7 +7,7 @@ const LeftMenu = (props) => {
     return (
         <div className="LeftMenu">
             <div className="user-profile-container">
-                <UserAccount/>
+                <UserAccount {...props}/>
             </div>
             <div className="sub-menu-part">
             </div>

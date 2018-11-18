@@ -12,7 +12,7 @@ const TopHeader = (props) => {
 
             <div className="pull-right">
                 <TextButtonWithIcon iconClass="fa fa-sign-out"
-                                    onclick={props.onLogout}
+                                    onclick={ () => { props.onLogout("logout")}}
                                     label={<FormattedMessage id="components.header.buttons.logout"/>}
                                     className="loggingOut text-center pagination-centered"/>
 

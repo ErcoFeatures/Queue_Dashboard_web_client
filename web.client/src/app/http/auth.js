@@ -13,12 +13,13 @@ const getAuthData = (store) => {
         http
             .get(Config.queueDashboardUrl + "/userdetails/Qdashboard")
             .then(response => {
-                if (response.data.isError) {
-                    console.log("Auth API Failed - IsError is true");
+                console.log ("response : ", response);
+                if (response.status !== 200) {
+                    console.log("Auth API Failed  with the status "+ response.status);
                     reject(null);
                 }
 
-                resolve(response.data.Data[0]);
+                resolve(response.data);
             })
             .catch(error => {
                 console.log("Auth API Failed");

@@ -2,9 +2,9 @@ import {setAuth} from "../actions/auth";
 import Config from "../profiles";
 
 const parseAuthResponse = (usercontext, store) => {
-    let isAuthenticated = true;
 
-    if (!usercontext) {
+
+    if (typeof usercontext !== "object") {
         console.log("Auth User Context is Empty");
         setAuthFailed(store);
         return;
@@ -13,8 +13,8 @@ const parseAuthResponse = (usercontext, store) => {
     const userDetails = {
         UserID: usercontext.id,
         Email: usercontext.email,
-        FirstName: usercontext.firstName,
-        LastName: usercontext.lastName,
+        FirstName: usercontext.firstname,
+        LastName: usercontext.lastname,
         Title: usercontext.title,
         ListQueue: usercontext.queues,
         Roles: usercontext.roles,
@@ -23,7 +23,7 @@ const parseAuthResponse = (usercontext, store) => {
     return store.dispatch(
         setAuth({
             loginURL: Config.loginURL,
-            isAuthenticated,
+            isAuthenticated:true,
             userDetails
         })
     );

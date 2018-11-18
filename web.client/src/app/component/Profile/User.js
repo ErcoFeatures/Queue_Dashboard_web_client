@@ -6,14 +6,15 @@ import MenuProfile from './MenuProfile';
 
 const User = ({ user, onLogout }) => (
     <MenuProfile
-        name={user.firstName}
+        name={user.FirstName}
         picture={user.picture}
     />
 );
 
 User.propTypes = {
     user: PropTypes.shape({
-        name: PropTypes.string.isRequired,
+        FirstName: PropTypes.string.isRequired,
+        LastName: PropTypes.string.isRequired,
         picture: PropTypes.string.isRequired
     })
 };
