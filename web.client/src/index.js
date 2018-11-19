@@ -29,7 +29,6 @@ register();
 const AppBody = ({selectedLanguage, selectedTranslations}, props) => {
 
     store.dispatch(selectLanguage());
-    // props.store.dispatch(initializeFacebookSDK());
 
     return (
         <IntlProvider

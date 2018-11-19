@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 //App imports
 import MenuProfile from './MenuProfile';
 
-const User = ({ user, onLogout }) => (
+const User = ({user}) => (
     <MenuProfile
-        name={user.FirstName}
+        name={user.LastName + "," + user.FirstName}
         picture={user.picture}
     />
 );

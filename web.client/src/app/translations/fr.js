@@ -5,5 +5,12 @@ export default {
     'components.header.buttons.logout': 'se deconnecter',
     'components.header.buttons.signup': "S'enregistrer",
 
-    'components.Loader.Text.logging': 'Connexion...'
+    'components.header.buttons.addQueue': "Nouvelle File",
+
+    'components.Loader.Text.logging': 'Connexion...',
+
+
+    'components.queue.addNew.namPlaceHolder': 'Nom de la file d\'attente'
+
+
 }

@@ -11,6 +11,12 @@ const TopHeader = (props) => {
             </div>
 
             <div className="pull-right">
+                <TextButtonWithIcon iconClass="fa fa-plus-circle"
+                                    onclick={ () => {props.setShowNewQueueForm(true)}}
+                                    label={<FormattedMessage id="components.header.buttons.addQueue"/>}
+                                    className="addQueueButton text-center pagination-centered"/>
+                <div className="inline-block vertical-align-middle margin-left-20  menuItemRightDivider margin-right-20"></div>
+
                 <TextButtonWithIcon iconClass="fa fa-sign-out"
                                     onclick={ () => { props.onLogout("logout")}}
                                     label={<FormattedMessage id="components.header.buttons.logout"/>}

@@ -1,5 +1,6 @@
 import React from 'react'
 import  UserAccount from '../UserAccount'
+import SubMenu from "../../container/leftSubMenu";
 
 
 const LeftMenu = (props) => {
@@ -10,6 +11,9 @@ const LeftMenu = (props) => {
                 <UserAccount {...props}/>
             </div>
             <div className="sub-menu-part">
+                <ul>
+                    <SubMenu/>
+                </ul>
             </div>
         </div>
     )
