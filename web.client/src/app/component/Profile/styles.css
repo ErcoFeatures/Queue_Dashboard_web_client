@@ -23,13 +23,15 @@
     /* float: inherit; */
     vertical-align: bottom;
     border: 1px solid white;
-    width: 122px;
+    /*width: 122px;*/
     height: 25px;
     border-radius: 15px;
     color: #CAE3EB;
     bottom: 15px;
-    left: 61px;
+    left: 30px;
+    right: 30px;
     background-color: #1FAAF3;
+    cursor: pointer;
 }
 
 .loginPage .logoContainer{

@@ -5,6 +5,7 @@
     font-stretch: normal;
     line-height: 1.55;
     letter-spacing: normal;
+    padding: 0 5px;
 }
 .textButtonWithIcon .fa{
     margin-right: 4px;
@@ -14,4 +15,8 @@
 }
 .active{
     color: rgb(244, 92, 40);
+}
+
+.btn-primary{
+    color: #CAE3EB;
 }

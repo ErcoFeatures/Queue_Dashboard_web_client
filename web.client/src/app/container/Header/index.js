@@ -1,10 +1,7 @@
 import React from 'react'
 import QDNav from '../../component/nav'
 import {connect} from 'react-redux'
-
-
-//App Import
-import { login, logout } from '../../actions/auth';
+import {setShowNewQueueForm} from '../../actions/queues'
 
  const Header = (props) => {
     return (
@@ -15,11 +12,10 @@ import { login, logout } from '../../actions/auth';
  }
 
 
-const mapDispatchToProps = dispatch => {
-    return {
-        onLogin: () => dispatch(login()),
-        onLogout: () => dispatch(logout())
-    };
-};
+
+const  mapDispatchToProps = dispatch => ({
+    setShowNewQueueForm : (data) => dispatch(setShowNewQueueForm(data))
+    })
+
 
  export default  connect(null, mapDispatchToProps)(Header);

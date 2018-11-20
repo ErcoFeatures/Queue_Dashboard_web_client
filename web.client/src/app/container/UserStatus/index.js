@@ -7,15 +7,9 @@ import UserStatus from '../../component/Profile';
 
 const UserStatusComponent = ({ ...props }) => <UserStatus {...props} />;
 
-UserStatusComponent.propTypes = {
-    isConnected: PropTypes.bool.isRequired,
-    isConnecting: PropTypes.bool.isRequired,
-};
 
-const mapStateToProps = ({ auth: { isConnecting, user } }) => ({
-    isConnecting,
-    isConnected: user.id !== null,
-    user
+const mapStateToProps = ({ auth: { userObject } }) => ({
+    userObject
 });
 
 
