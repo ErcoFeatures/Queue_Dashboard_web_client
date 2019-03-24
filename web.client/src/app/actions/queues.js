@@ -8,19 +8,6 @@ export const setShowNewQueueForm = createAction("SET_SHOW_NEW_QUEUE_FORM");
 export const setActiveQueue = createAction("SET_ACTIVE_QUEUE");
 
 
-// export const retrieveAllUserQueues createAction( RETRIEVEALLUSERQUEUES)
-// export const createQueue createAction( RETRIEVEALLUSERQUEUES)
-// export const retrieveQueue createAction( RETRIEVEALLUSERQUEUES)
-// export const deleteQueue createAction( RETRIEVEALLUSERQUEUES)
-// export const retrieveAllQueueMembers createAction( RETRIEVEALLUSERQUEUES)
-// export const AddQueueMember createAction( RETRIEVEALLUSERQUEUES)
-
-
-// export const createUser createAction( RETRIEVEALLUSERQUEUES)
-// export const retrieveAllUsers createAction( RETRIEVEALLUSERQUEUES)
-// export const retrieveUser createAction( RETRIEVEALLUSERQUEUES)
-// export const deletSer createAction( RETRIEVEALLUSERQUEUES)
-
 export function createQueue({payload, callDescription}) {
     return dispatch => {
         http.post(Config.queueDashboardUrl + "/users/"+payload.owner+"/queues", payload.data).then(response => {
