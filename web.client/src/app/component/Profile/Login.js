@@ -2,6 +2,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { intlShape, injectIntl } from 'react-intl';
+import {Link} from 'react-router-dom'
+import Config from '../../profiles'
 import './styles.css'
 const Login = function({ intl: { formatMessage }, ...props }) {
     const loginButtonText = formatMessage({
@@ -16,7 +18,7 @@ const Login = function({ intl: { formatMessage }, ...props }) {
             </div>
 
             <div  className="LoginButton" onClick={props.onLogin}>
-                <span>{loginButtonText}</span>
+                <Link to={Config.loginURL}>{loginButtonText}</Link>
             </div>
         </div>
     );

@@ -2,7 +2,7 @@ import React from 'react'
 
 
 
-const Login = (props) => {
+const  Login = (props) => {
 
     return (
         <div>

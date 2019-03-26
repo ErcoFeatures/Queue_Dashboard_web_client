@@ -15,11 +15,6 @@ class MenuProfile extends React.Component {
         return (
             <div>
                 <div className="user-avatar text-center">
-                    <img
-                        className={"userAvatar text-center"}
-                        alt={this.props.name}
-                        src={this.props.picture}
-                    />
                 </div>
                 <div className={"nameLabelBigScreen text-center pagination-centered"}>
                         {this.props.name}
