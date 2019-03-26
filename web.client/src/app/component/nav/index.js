@@ -13,10 +13,10 @@ const QDNav = (props) => {
         <div id="content">
         <div className="main-container">
             <div className="col-xs-12 main-grid no-padding">
-                <div className="col-xs-2 menu-part no-padding">
+                <div className="col-xs-1 menu-part no-padding">
                     <LeftMenu {...props}/>
                 </div>
-                <div className="col-xs-10 no-padding">
+                <div className="col-xs-11 no-padding">
                     <div className="header-part">
                         <TopHeader {...props}/>
                     </div>
